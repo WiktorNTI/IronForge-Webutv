@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121212;
+    padding: 10px 10px;
+}
+
+.logotyp {
+    font-size: 24px;
+    font-weight: bold;
+    color: #C574F1;
+    text-decoration: none; 
+}
+.logotyp img {
+    height: 100px; 
+    width: auto; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    font-size: 18px; 
+    font-weight: 600;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #C574F1;
+}
+
+.sok input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.sok-knapp {
+    padding: 8px 12px;
+    background-color: #C574F1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+¨
+/* Login button styles */
+.logga-in {
+    padding: 8px 16px;
+    background-color: #C574F1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logga-in:hover {
+    background-color: #a155d1;
+}
+
+/* Annons/Nyheter */
+.annons {
+    background: #C574F1;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-image: url('./media/hero-image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h1, 
+.hero p, 
+.hero .cta-knapp {
+    position: relative;
+    z-index: 2;
+    color: white; /* Ensures text is visible */
+}
+
+.cta-knapp {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #C574F1;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.cta-knapp:hover {
+    background-color: #a155d1;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .sok {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .sok input {
+        flex-grow: 1;
+    }
+    
+    .produkt-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero {
+        height: 300px;
+        padding: 30px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+/* Produkter */
+.utvalda-produkter {
+    text-align: center;
+    padding: 50px;
+}
+
+.utvalda-produkter h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.produkt-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.produkt {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+.produkt img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.köp-knapp {
+    background: #C574F1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.köp-knapp:hover {
+    background: #9B4FC9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e1e1e;
+    margin-top: 30px;
+}
+
+/* Active nav link */
+nav ul li a.active {
+    color: #C574F1;
+    border-bottom: 2px solid #C574F1;
+}
