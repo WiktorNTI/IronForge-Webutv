@@ -1,229 +1,205 @@
+/* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Orbitron', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #1a1a1a;
     color: #fff;
+    line-height: 1.6;
 }
 
+/* Header & Navigation */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 15px;
     background-color: #121212;
-    padding: 10px 10px;
+    gap: 20px;
 }
 
-.logotyp {
-    font-size: 24px;
-    font-weight: bold;
-    color: #C574F1;
-    text-decoration: none; 
-}
 .logotyp img {
-    height: 100px; 
-    width: auto; 
+    height: 40px; /* Increased from 30px */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logotyp img:hover {
+    transform: scale(1.05);
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 20px;
-    padding: 0;
+    list-style: none;
+    gap: 25px;
 }
 
-nav ul li {
-    font-size: 18px; 
-    font-weight: 600;
-}
-
-nav ul li a {
-    text-decoration: none;
+nav a {
     color: #fff;
+    text-decoration: none;
+    font-size: 16px;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
+nav a:hover,
+nav a.active {
     color: #C574F1;
 }
 
-.sok input {
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
+/* Support Page Specific Styles */
+.support-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
-.sok-knapp {
-    padding: 8px 12px;
-    background-color: #C574F1;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-¨
-/* Login button styles */
-.logga-in {
-    padding: 8px 16px;
-    background-color: #C574F1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.faq-section {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.logga-in:hover {
-    background-color: #a155d1;
+.contact-form {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Annons/Nyheter */
-.annons {
-    background: #C574F1;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-}
-
-
-.hero {
-    text-align: center;
-    padding: 50px;
-    background-image: url('./media/hero-image.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 500px;
-    position: relative;
+.contact-form form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 15px;
 }
 
-.hero h1 {
-    font-size: 36px;
-    font-weight: bold;
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: white;
 }
 
-.hero p {
-    font-size: 18px;
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+/* Buttons & Interactive Elements */
+.button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
 }
 
-.hero h1, 
-.hero p, 
-.hero .cta-knapp {
-    position: relative;
-    z-index: 2;
-    color: white; /* Ensures text is visible */
+.sok-knapp, .logga-in {
+    background-color: #C574F1;
+    color: white;
 }
 
 .cta-knapp {
+    background-color: #C574F1;
     font-size: 18px;
     padding: 12px 24px;
-    background-color: #C574F1;
-    border: none;
-    color: white;
-    cursor: pointer;
     border-radius: 8px;
-    transition: 0.3s;
 }
 
-.cta-knapp:hover {
+.köp-knapp {
+    background-color: #C574F1;
+    padding: 10px 20px;
+}
+
+.button:hover {
     background-color: #a155d1;
+    transform: translateY(-1px);
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 8px 10px;
         gap: 15px;
     }
-    
+
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        gap: 15px;
+        font-size: 14px;
     }
-    
+
     .sok {
+        order: 3;
         width: 100%;
-        display: flex;
-        gap: 10px;
+        max-width: none;
+        margin-top: 10px;
     }
-    
-    .sok input {
-        flex-grow: 1;
+
+    .logotyp img {
+        height: 35px; /* Slightly larger on mobile */
     }
-    
+
     .produkt-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .hero {
-        height: 300px;
-        padding: 30px;
+        grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        font-size: 28px;
+    .support-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
     }
 }
-/* Produkter */
-.utvalda-produkter {
-    text-align: center;
-    padding: 50px;
-}
 
-.utvalda-produkter h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
+/* Product Grids */
 .produkt-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
 .produkt {
     background: #1e1e1e;
     padding: 20px;
     border-radius: 10px;
-    width: 250px;
     text-align: center;
 }
 
-.produkt img {
-    width: 100%;
-    border-radius: 5px;
+/* Hero Sections */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    height: 500px; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('media/hero-image.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
-.köp-knapp {
-    background: #C574F1;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.köp-knapp:hover {
-    background: #9B4FC9;
+.hero h1,
+.hero p,
+.hero .cta-knapp {
+    position: relative;
+    z-index: 2; 
+    color: white; 
 }
 
 /* Footer */
@@ -234,8 +210,14 @@ footer {
     margin-top: 30px;
 }
 
-/* Active nav link */
-nav ul li a.active {
-    color: #C574F1;
-    border-bottom: 2px solid #C574F1;
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.p-20 { padding: 20px; }
+
+/* Accessibility */
+button:focus, 
+a:focus {
+    outline: 2px solid #C574F1;
+    outline-offset: 2px;
 }
