@@ -10,7 +10,8 @@
     <header>
         <a href="index.html" class="logotyp">
             <img src="../media/logo.png" alt="IronForge Logo" loading="lazy">
-        <nav>
+        </a>
+        <nav class="nav-links">
             <ul>
                 <li><a href="produkter.html">Produkter</a></li>
                 <li><a href="nyheter.html">Nyheter</a></li>
@@ -19,9 +20,58 @@
             </ul>
         </nav>
         <div class="sok">
-            <input type="text" placeholder="Sök produkter...">
+            <input type="text" id="sokInput" placeholder="Sök produkter...">
             <button class="button sok-knapp">🔍</button>
         </div>
         <button class="button logga-in">Logga in</button>
     </header>
+
+    <section class="page-hero">
+        <h1>Våra Produkter</h1>
+        <p>Upptäck vårt breda sortiment av gaming-utrustning</p>
+    </section>
+
+    <div class="kategori-grid">
+        <div class="kategori">
+            <h2>Tangentbord</h2>
+            <div class="produkt-container">
+                <div class="produkt">
+                    <img src="media/tangentbord.jpg" alt="Gaming Tangentbord">
+                    <h3>Mekaniskt RGB Tangentbord</h3>
+                    <p>1,499 kr</p>
+                    <button class="köp-knapp">Köp nu</button>
+                </div>
+                <div class="produkt">
+                    <img src="media/tangentbord2.jpg" alt="Kompakt Tangentbord">
+                    <h3>Kompakt 60% Tangentbord</h3>
+                    <p>1,299 kr</p>
+                    <button class="köp-knapp">Köp nu</button>
+                </div>
+            </div>
+        </div>
+        <div class="kategori">
+            <h2>Möss</h2>
+            <div class="produkt-container">
+                <div class="produkt">
+                    <img src="media/mus.jpg" alt="Gaming Mus">
+                    <h3>Trådlös Gaming Mus</h3>
+                    <p>899 kr</p>
+                    <button class="köp-knapp">Köp nu</button>
+                </div>
+                <div class="produkt">
+                    <img src="media/mus2.jpg" alt="Ergonomic Mus">
+                    <h3>Ergonomisk Mus</h3>
+                    <p>799 kr</p>
+                    <button class="köp-knapp">Köp nu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 IronForge - Alla rättigheter förbehållna.</p>
+        <p><a href="#">Integritetspolicy</a> | <a href="#">Kontakt</a></p>
+    </footer>
+    <script src="script.js"></script>
 </body>
+</html>
