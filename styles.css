@@ -178,6 +178,16 @@ nav a.active {
     text-align: center;
 }
 
+/* Add image sizing rules */
+.produkt img {
+    max-width: 100%;
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
 /* Hero Sections */
 .hero {
     text-align: center;
@@ -220,4 +230,10 @@ button:focus,
 a:focus {
     outline: 2px solid #C574F1;
     outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .produkt img {
+        height: 150px; /* Smaller height on mobile */
+    }
 }
