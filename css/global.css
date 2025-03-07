@@ -121,70 +121,73 @@ a:focus {
     outline-offset: 2px;
 }
 
-/* Hamburger Menu Styles */
-.hamburger-menu {
-  display: none; /* Hidden by default */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 24px;
-  cursor: pointer;
-  margin-left: 15px;
-  z-index: 100;
-}
-
-.hamburger-menu span {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Responsive Navigation */
+/* Make the logo clickable on mobile */
 @media (max-width: 768px) {
-  .hamburger-menu {
-      display: flex; /* Show hamburger on mobile */
-  }
+    .logotyp {
+        cursor: pointer; /* Make the logo clickable */
+        position: relative; /* For positioning the menu indicator */
+    }
 
-  nav {
-      display: none; /* Hide nav by default */
-      position: absolute;
-      top: 70px; /* Adjust based on header height */
-      left: 0;
-      width: 100%;
-      background-color: #1a1a1a;
-      padding: 15px;
-      border-bottom: 2px solid #333;
-      z-index: 99;
-  }
+    /* Add a menu indicator (e.g., ☰) to the logo */
+    .logotyp::after {
+        content: "☰"; /* Hamburger icon */
+        position: absolute;
+        right: -25px; /* Adjust position as needed */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #C574F1; /* Match your theme color */
+        transition: transform 0.3s ease;
+    }
 
-  nav.active {
-      display: block; /* Show nav when active */
-      animation: fadeIn 0.3s ease;
-  }
+    /* Change the menu indicator to a close icon when active */
+    .logotyp.active::after {
+        content: "✕"; /* Close icon */
+        transform: translateY(-50%) rotate(90deg);
+    }
 
-  nav ul {
-      flex-direction: column;
-      gap: 15px;
-  }
+    /* Hide the navigation by default on mobile */
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        padding: 15px;
+        border-bottom: 2px solid #333;
+        z-index: 99;
+    }
 
-  nav li {
-      border-bottom: 1px solid #333;
-      padding: 10px 0;
-  }
+    /* Show the navigation when active */
+    nav.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
 
-  nav li:last-child {
-      border-bottom: none;
-  }
+    /* Navigation link styles */
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-  @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-  }
+    nav li {
+        border-bottom: 1px solid #333;
+        padding: 10px 0;
+    }
 
-  /* Hide search bar on mobile if needed */
-  .sok {
-      display: none;
-  }
+    nav li:last-child {
+        border-bottom: none;
+    }
+
+    /* Hide search bar on mobile if needed */
+    .sok {
+        display: none;
+    }
+
+    /* Animation for menu */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 }

@@ -1,41 +1,39 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const nav = document.querySelector('nav');
     const logo = document.querySelector('.logotyp');
+    const nav = document.querySelector('nav');
 
-    // Toggle menu on hamburger click
-    if (hamburgerMenu && nav) {
-        hamburgerMenu.addEventListener('click', function () {
-            nav.classList.toggle('active');
-            hamburgerMenu.classList.toggle('active'); // For animation (optional)
+    if (logo && nav) {
+        // Toggle menu when logo is clicked (on small screens)
+        logo.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Prevent default link behavior
+                nav.classList.toggle('active');
+                logo.classList.toggle('active'); // Toggle the active class for the menu indicator
+                logo.setAttribute('aria-expanded', nav.classList.contains('active')); // Update ARIA attribute
+            }
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function (e) {
-            if (!hamburgerMenu.contains(e.target) && !nav.contains(e.target)) {
+            if (!logo.contains(e.target) && !nav.contains(e.target)) {
                 nav.classList.remove('active');
-                hamburgerMenu.classList.remove('active');
+                logo.classList.remove('active');
+                logo.setAttribute('aria-expanded', false); // Update ARIA attribute
             }
         });
 
-        // Close menu on nav link click
+        // Close menu when a nav link is clicked
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
                     nav.classList.remove('active');
-                    hamburgerMenu.classList.remove('active');
+                    logo.classList.remove('active');
+                    logo.setAttribute('aria-expanded', false); // Update ARIA attribute
                 }
             });
         });
-    }
-
-    if (logo && nav) {
-        logo.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                nav.classList.toggle('active');
-            }
-        });
+    } else {
+        console.error('Logo or navigation not found!');
     }
 });
