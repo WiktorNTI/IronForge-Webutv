@@ -1,0 +1,103 @@
+.support-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.faq-section {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+}
+
+.faq-answer {
+    padding: 10px;
+    background-color: #333;
+    border-radius: 0 0 5px 5px;
+    margin-top: 5px;
+}
+
+.contact-form {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: white;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #C574F1;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: #a155d1;
+}
+
+@media (max-width: 768px) {
+    .support-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+}
+
+/* Add for smaller devices */
+@media (max-width: 480px) {
+    .faq-question {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .faq-answer {
+        font-size: 13px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        padding: 10px;
+    }
+}

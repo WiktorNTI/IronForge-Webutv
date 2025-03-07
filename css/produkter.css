@@ -1,0 +1,73 @@
+.kategori-grid {
+    padding: 0 20px;
+}
+
+.kategori {
+    margin-bottom: 40px;
+}
+
+.kategori h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.produkt-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.produkt {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.produkt img {
+    max-width: 100%;
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.produkt h3 {
+    margin-bottom: 10px;
+}
+
+.produkt p {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .produkt-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .produkt img {
+        height: 150px;
+    }
+    
+    .kategori {
+        margin-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .kategori-grid {
+        padding: 0 10px;
+    }
+    
+    .produkt {
+        padding: 15px;
+    }
+    
+    .kategori h2 {
+        font-size: 20px;
+    }
+}

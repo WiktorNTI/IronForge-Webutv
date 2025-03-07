@@ -3,26 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Få support och hjälp med din gaming-utrustning på IronForge.">
     <title>IronForge - Support</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/support.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="icon" type="image/png" href="../media/logo.png">
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <a href="index.html" class="logotyp">
-            <img src="../media/logo.png" alt="IronForge Logo" loading="lazy">
-        <nav>
+            <img src="../media/logo.png" alt="IronForge Logo" loading="lazy" width="100" height="40">
+        </a>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav role="navigation" aria-expanded="false">
             <ul>
                 <li><a href="produkter.html">Produkter</a></li>
                 <li><a href="nyheter.html">Nyheter</a></li>
-                <li><a href="#">Tjänster</a></li>
+                <li><a href="tjänster.html">Tjänster</a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
         </nav>
         <div class="sok">
             <input type="text" placeholder="Sök produkter...">
-            <button class="button sok-knapp">🔍</button>
+            <button class="button sok-knapp" aria-label="Sök produkter">🔍</button>
         </div>
         <button class="button logga-in">Logga in</button>
     </header>
 
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <h1>Kundsupport</h1>
+            <p>Hur kan vi hjälpa dig idag?</p>
+        </section>
+
+        <!-- Support Content -->
+        <section class="support-content">
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Vanliga frågor</h2>
+                <div class="faq-item">
+                    <h3>Hur spårar jag min order?</h3>
+                    <p>När din order har skickats får du ett mail med tracking-nummer...</p>
+                </div>
+                <h3>Hur kan jag förboka produkter?</h3>
+                <p>ta kontakt med vår Kundsupport så lägger vi gärna undan produkten, Helt utan kostnad!</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Kontakta oss</h2>
+                <form>
+                    <input type="text" placeholder="Namn" required>
+                    <input type="email" placeholder="E-post" required>
+                    <textarea placeholder="Ditt meddelande" required></textarea>
+                    <button type="submit" class="submit-button">Skicka</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 IronForge - Alla rättigheter förbehållna.</p>
+        <p><a href="#">Integritetspolicy</a> | <a href="#">Kontakt</a></p>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
+</html>

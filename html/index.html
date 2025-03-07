@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="IronForge erbjuder det bästa inom gamingutrustning – tangentbord, möss, headset och mer. Uppgradera din gaming-setup idag!">
     <title>IronForge</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="icon" type="image/png" href="../media/logo.png">
 </head>
 <body>
+
     <!-- Navigeringsfält -->
     <header>
         <a href="index.html" class="logotyp">
-            <img src="../media/logo.png" alt="IronForge Logo" loading="lazy">
+            <img src="../media/logo.png" alt="IronForge Logo" loading="lazy" width="100" height="40">
         </a>
-        <nav>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav role="navigation" aria-expanded="false">
             <ul>
                 <li><a href="produkter.html">Produkter</a></li>
                 <li><a href="nyheter.html">Nyheter</a></li>
-                <li><a href="#">Tjänster</a></li>
+                <li><a href="tjänster.html">Tjänster</a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
         </nav>
         <div class="sok">
             <input type="text" placeholder="Sök produkter...">
-            <button class="button sok-knapp">🔍</button>
+            <button class="button sok-knapp" aria-label="Sök produkter">🔍</button>
         </div>
         <button class="button logga-in">Logga in</button>
     </header>
@@ -32,37 +41,40 @@
         <p>🔥 Just nu: 20% rabatt på alla headset! Använd koden "GAMING20" 🏆</p>
     </div>
 
-    <!-- Hero Image -->
-    <section class="hero">
-        <h1>Uppgradera din gaming-setup</h1>
-        <p>Det bästa inom gamingutrustning – tangentbord, möss, headset och mer.</p>
-        <button class="cta-knapp">Shoppa nu</button>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Image -->
+        <section class="hero">
+            <h1>Uppgradera din gaming-setup</h1>
+            <p>Det bästa inom gamingutrustning – tangentbord, möss, headset och mer.</p>
+            <button class="cta-knapp">Shoppa nu</button>
+        </section>
 
-    <!-- Utvalda produkter -->
-    <section class="utvalda-produkter">
-        <h2>Utvalda produkter</h2>
-        <div class="produkt-container">
-            <div class="produkt">
-                <img src="../media/feuturedHeadsetSS.jpg" alt="SteelSeries Gaming Headset">
-                <h3>SteelSeries Headset</h3>
-                <p>Kristallklart ljud för proffsspelare</p>
-                <button class="köp-knapp">Köp nu</button>
+        <!-- Utvalda produkter -->
+        <section class="utvalda-produkter">
+            <h2>Utvalda produkter</h2>
+            <div class="produkt-container">
+                <div class="produkt">
+                    <img src="../media/feuturedHeadsetSS.jpg" alt="SteelSeries Gaming Headset" width="300" height="200">
+                    <h3>SteelSeries Headset</h3>
+                    <p>Kristallklart ljud för proffsspelare</p>
+                    <button class="köp-knapp">Köp nu</button>
+                </div>
+                <div class="produkt">
+                    <img src="../media/feuturedKeyboard.jpg" alt="Gaming Tangentbord" width="300" height="200">
+                    <h3>RGB Tangentbord</h3>
+                    <p>Snabba switchar och anpassad RGB</p>
+                    <button class="köp-knapp">Köp nu</button>
+                </div>
+                <div class="produkt">
+                    <img src="../media/feuturedMouseG.jpg" alt="Gaming Mus" width="300" height="200">
+                    <h3>Precision Gaming Mus</h3>
+                    <p>Ultralätt design för snabb respons</p>
+                    <button class="köp-knapp">Köp nu</button>
+                </div>
             </div>
-            <div class="produkt">
-                <img src="../media/feuturedKeyboard.jpg" alt="Gaming Tangentbord">
-                <h3>RGB Tangentbord</h3>
-                <p>Snabba switchar och anpassad RGB</p>
-                <button class="köp-knapp">Köp nu</button>
-            </div>
-            <div class="produkt">
-                <img src="../media/feuturedMouseG.jpg" alt="Gaming Mus">
-                <h3>Precision Gaming Mus</h3>
-                <p>Ultralätt design för snabb respons</p>
-                <button class="köp-knapp">Köp nu</button>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>

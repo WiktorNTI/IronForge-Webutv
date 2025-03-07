@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #121212;
+    gap: 20px;
+}
+
+.logotyp img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logotyp img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #C574F1;
+}
+
+.sok {
+    display: flex;
+    gap: 5px;
+}
+
+.sok input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: white;
+}
+
+/* Buttons & Interactive Elements */
+.button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+.sok-knapp, .logga-in, .cta-knapp, .köp-knapp {
+    background-color: #C574F1;
+    color: white;
+}
+
+.cta-knapp {
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+.köp-knapp {
+    padding: 10px 20px;
+}
+
+.button:hover {
+    background-color: #a155d1;
+    transform: translateY(-1px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e1e1e;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #C574F1;
+    text-decoration: none;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.p-20 { padding: 20px; }
+
+/* Accessibility */
+button:focus, 
+a:focus {
+    outline: 2px solid #C574F1;
+    outline-offset: 2px;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 15px;
+  z-index: 100;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .hamburger-menu {
+      display: flex; /* Show hamburger on mobile */
+  }
+
+  nav {
+      display: none; /* Hide nav by default */
+      position: absolute;
+      top: 70px; /* Adjust based on header height */
+      left: 0;
+      width: 100%;
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-bottom: 2px solid #333;
+      z-index: 99;
+  }
+
+  nav.active {
+      display: block; /* Show nav when active */
+      animation: fadeIn 0.3s ease;
+  }
+
+  nav ul {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  nav li {
+      border-bottom: 1px solid #333;
+      padding: 10px 0;
+  }
+
+  nav li:last-child {
+      border-bottom: none;
+  }
+
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Hide search bar on mobile if needed */
+  .sok {
+      display: none;
+  }
+}

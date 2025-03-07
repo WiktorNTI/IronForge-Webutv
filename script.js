@@ -1,31 +1,41 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('nav');
+    const logo = document.querySelector('.logotyp');
 
-document.querySelector(".sok-knapp").addEventListener("click", function(e) {
-    const button = e.target;
-    const originalText = button.innerHTML;
-    button.innerHTML = "...";
-    setTimeout(() => {
-        button.innerHTML = originalText;
-        alert("Sökfunktionen kommer snart!");
-    }, 500);
-});
+    // Toggle menu on hamburger click
+    if (hamburgerMenu && nav) {
+        hamburgerMenu.addEventListener('click', function () {
+            nav.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active'); // For animation (optional)
+        });
 
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!hamburgerMenu.contains(e.target) && !nav.contains(e.target)) {
+                nav.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
 
-document.querySelector(".cta-knapp").addEventListener("click", function() {
-    this.style.transform = "scale(0.95)";
-    setTimeout(() => {
-        this.style.transform = "scale(1)";
-        alert("Gå till butiken!");
-    }, 100);
-});
+        // Close menu on nav link click
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    nav.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                }
+            });
+        });
+    }
 
-
-document.querySelectorAll(".köp-knapp").forEach(button => {
-    button.addEventListener("click", function() {
-        this.innerHTML = "✓ Tillagd";
-        this.style.backgroundColor = "#4CAF50";
-        setTimeout(() => {
-            this.innerHTML = "Köp nu";
-            this.style.backgroundColor = "#C574F1";
-        }, 1500);
-    });
+    if (logo && nav) {
+        logo.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                nav.classList.toggle('active');
+            }
+        });
+    }
 });
