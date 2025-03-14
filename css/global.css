@@ -169,6 +169,7 @@ a:focus {
     nav ul {
         flex-direction: column;
         gap: 15px;
+        padding-top: 10px; /* Ger lite utrymme ovanför */
     }
 
     nav li {
@@ -178,6 +179,19 @@ a:focus {
 
     nav li:last-child {
         border-bottom: none;
+    }
+
+    /* Lägg till en speciell stil för "Hem"-knappen */
+    nav ul li.hem-knapp {
+        background-color: #C574F1;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul li.hem-knapp a {
+        color: white;
+        font-weight: bold;
     }
 
     /* Hide search bar on mobile if needed */

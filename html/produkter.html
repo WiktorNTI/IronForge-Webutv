@@ -18,6 +18,7 @@
         </a>
         <nav role="navigation" aria-expanded="false">
             <ul>
+                <li class="hem-knapp"><a href="index.html">Hem</a></li>
                 <li><a href="produkter.html">Produkter</a></li>
                 <li><a href="nyheter.html">Nyheter</a></li>
                 <li><a href="tjänster.html">Tjänster</a></li>
@@ -39,42 +40,39 @@
             <p>Upptäck vårt breda sortiment av gaming-utrustning</p>
         </section>
 
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <label for="sort-by">Sortera efter:</label>
+                <select id="sort-by" class="filter-dropdown">
+                    <option value="popularitet">Popularitet</option>
+                    <option value="pris-lågt-högt">Pris (Lågt till Högt)</option>
+                    <option value="pris-högt-lågt">Pris (Högt till Lågt)</option>
+                    <option value="nyast">Nyast</option>
+                    <option value="äldst">Äldst</option>
+                </select>
+
+                <label for="filter-brand">Märke:</label>
+                <select id="filter-brand" class="filter-dropdown">
+                    <option value="alla">Alla</option>
+                    <option value="razer">Razer</option>
+                    <option value="steelseries">SteelSeries</option>
+                    <option value="logitech">Logitech</option>
+                </select>
+
+                <label for="filter-type">Typ:</label>
+                <select id="filter-type" class="filter-dropdown">
+                    <option value="alla">Alla</option>
+                    <option value="tangentbord">Tangentbord</option>
+                    <option value="möss">Möss</option>
+                    <option value="headset">Headset</option>
+                </select>
+            </div>
+        </section>
+
         <!-- Produktkategorier -->
         <div class="kategori-grid">
-            <div class="kategori">
-                <h2>Tangentbord</h2>
-                <div class="produkt-container">
-                    <div class="produkt">
-                        <img src="media/tangentbord.jpg" alt="Gaming Tangentbord" width="300" height="200">
-                        <h3>Mekaniskt RGB Tangentbord</h3>
-                        <p>1,499 kr</p>
-                        <button class="köp-knapp">Köp nu</button>
-                    </div>
-                    <div class="produkt">
-                        <img src="media/tangentbord2.jpg" alt="Kompakt Tangentbord" width="300" height="200">
-                        <h3>Kompakt 60% Tangentbord</h3>
-                        <p>1,299 kr</p>
-                        <button class="köp-knapp">Köp nu</button>
-                    </div>
-                </div>
-            </div>
-            <div class="kategori">
-                <h2>Möss</h2>
-                <div class="produkt-container">
-                    <div class="produkt">
-                        <img src="media/mus.jpg" alt="Gaming Mus" width="300" height="200">
-                        <h3>Trådlös Gaming Mus</h3>
-                        <p>899 kr</p>
-                        <button class="köp-knapp">Köp nu</button>
-                    </div>
-                    <div class="produkt">
-                        <img src="media/mus2.jpg" alt="Ergonomic Mus" width="300" height="200">
-                        <h3>Ergonomisk Mus</h3>
-                        <p>799 kr</p>
-                        <button class="köp-knapp">Köp nu</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Produkter kommer att visas här dynamiskt -->
         </div>
     </main>
 

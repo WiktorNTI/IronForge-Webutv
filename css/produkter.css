@@ -1,20 +1,68 @@
-.kategori-grid {
-    padding: 0 20px;
-}
 
-.kategori {
+.page-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #121212;
     margin-bottom: 40px;
 }
 
-.kategori h2 {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #333;
+.page-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    font-size: 18px;
+    color: #999;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: #121212;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.filter-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter-dropdown {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-dropdown:hover {
+    background-color: #333;
+}
+
+label {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* Kategori Grid */
+.kategori-grid {
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .produkt-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px;
 }
 
@@ -23,6 +71,12 @@
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produkt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .produkt img {
@@ -35,39 +89,75 @@
 }
 
 .produkt h3 {
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
-.produkt p {
-    margin-bottom: 15px;
+.produkt .pris {
+    font-size: 18px;
     font-weight: bold;
+    color: #C574F1;
+    margin-bottom: 15px;
+}
+
+.köp-knapp {
+    background-color: #C574F1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.köp-knapp:hover {
+    background-color: #a155d1;
+}
+
+/* Responsiv design */
+@media (max-width: 1200px) {
+    .produkt-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    }
 }
 
 @media (max-width: 768px) {
     .produkt-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
     }
-    
+
     .produkt img {
         height: 150px;
     }
-    
-    .kategori {
-        margin-bottom: 30px;
+
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
-
 @media (max-width: 480px) {
-    .kategori-grid {
-        padding: 0 10px;
+    .page-hero h1 {
+        font-size: 28px;
     }
-    
+
+    .page-hero p {
+        font-size: 16px;
+    }
+
     .produkt {
         padding: 15px;
     }
-    
-    .kategori h2 {
-        font-size: 20px;
+
+    .produkt h3 {
+        font-size: 18px;
+    }
+
+    .produkt .pris {
+        font-size: 16px;
+    }
+
+    .produkt-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
     }
 }
