@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Kompakt 60% Tangentbord', price: 1299, brand: 'SteelSeries', type: 'tangentbord', popularity: 4, date: '2025-02-10' },
         { name: 'Trådlös Gaming Mus', price: 899, brand: 'Logitech', type: 'möss', popularity: 3, date: '2025-03-05' },
         { name: 'Ergonomisk Mus', price: 799, brand: 'Razer', type: 'möss', popularity: 2, date: '2025-04-20' },
+        { name: 'Steelseries Gaming Hedset', price: 1899, brand: 'SteelSeries', type: 'Headset', popularity: 3, date: '2025-04-20' },
+        { name: 'Apple airpods 2', price: 2999, brand: 'Apple', type: 'Headset', popularity: 5, date: '2025-04-20' },
     ];
 
     const productContainer = document.querySelector('.kategori-grid');
