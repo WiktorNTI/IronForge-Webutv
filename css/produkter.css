@@ -1,4 +1,6 @@
+/* produkter.css */
 
+/* Hero Section */
 .page-hero {
     text-align: center;
     padding: 60px 20px;
@@ -53,16 +55,20 @@ label {
     margin-right: 5px;
 }
 
-/* Kategori Grid */
+/* Kategori Grid - Updated */
 .kategori-grid {
     padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Standard: 3-4 produkter per rad */
+    gap: 20px;
 }
 
+/* Keeping these classes for compatibility with other parts of the site */
 .produkt-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -115,15 +121,21 @@ label {
 }
 
 /* Responsiv design */
-@media (max-width: 1200px) {
-    .produkt-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+@media (min-width: 1200px) {
+    .kategori-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Fler produkter per rad på större skärmar */
+    }
+}
+
+@media (min-width: 1600px) {
+    .kategori-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ytterligare fler produkter per rad på extra stora skärmar */
     }
 }
 
 @media (max-width: 768px) {
-    .produkt-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    .kategori-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Färre produkter per rad på mindre skärmar */
     }
 
     .produkt img {
@@ -157,7 +169,7 @@ label {
         font-size: 16px;
     }
 
-    .produkt-container {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    .kategori-grid {
+        grid-template-columns: 1fr; /* 1 produkt per rad på mobil */
     }
 }

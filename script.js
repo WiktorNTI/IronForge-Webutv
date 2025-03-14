@@ -13,7 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Funktion för att rendera produkter
     function renderProducts(filteredProducts) {
-        productContainer.innerHTML = ''; // Rensa befintliga produkter
+        // Rensa befintliga produkter
+        productContainer.innerHTML = '';
+        
+        // Apply grid display directly to the kategori-grid container
+        productContainer.style.display = 'grid';
+        productContainer.style.gridTemplateColumns = 'repeat(auto-fit, minmax(250px, 1fr))';
+        productContainer.style.gap = '20px';
 
         filteredProducts.forEach(product => {
             const productCard = `
