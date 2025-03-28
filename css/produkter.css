@@ -3,19 +3,29 @@
 /* Hero Section */
 .page-hero {
     text-align: center;
-    padding: 60px 20px;
-    background-color: #121212;
-    margin-bottom: 40px;
+    padding: 100px 20px;
+    background-image: url('../media/hero-image.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
 }
 
-.page-hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Mörklägger bilden för bättre kontrast */
 }
 
+.page-hero h1,
 .page-hero p {
-    font-size: 18px;
-    color: #999;
+    position: relative;
+    z-index: 1;
 }
 
 /* Filter Section */
@@ -55,18 +65,11 @@ label {
     margin-right: 5px;
 }
 
-/* Kategori Grid - Updated */
+/* Kategori Grid */
 .kategori-grid {
     padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Standard: 3-4 produkter per rad */
-    gap: 20px;
-}
-
-/* Keeping these classes for compatibility with other parts of the site */
-.produkt-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -123,19 +126,19 @@ label {
 /* Responsiv design */
 @media (min-width: 1200px) {
     .kategori-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Fler produkter per rad på större skärmar */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
 
 @media (min-width: 1600px) {
     .kategori-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ytterligare fler produkter per rad på extra stora skärmar */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
     .kategori-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Färre produkter per rad på mindre skärmar */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .produkt img {
@@ -170,6 +173,6 @@ label {
     }
 
     .kategori-grid {
-        grid-template-columns: 1fr; /* 1 produkt per rad på mobil */
+        grid-template-columns: 1fr;
     }
 }

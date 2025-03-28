@@ -78,3 +78,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // Rendera produkter vid första laddningen
     updateProducts();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.logotyp');
+    const nav = document.querySelector('nav');
+    
+    // Function to check if we're in mobile view
+    function isMobileView() {
+        return window.innerWidth <= 768;
+    }
+
+    // Event listener for logo click
+    logo.addEventListener('click', (e) => {
+        if (isMobileView()) {
+            e.preventDefault();
+            
+            nav.classList.toggle('active');
+            logo.classList.toggle('active');
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (!isMobileView()) {
+            logo.addEventListener('click', null);
+        }
+    });
+});

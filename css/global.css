@@ -124,7 +124,7 @@ a:focus {
 /* Make the logo clickable on mobile */
 @media (max-width: 768px) {
     .logotyp {
-        cursor: pointer; /* Make the logo clickable */
+        cursor: pointer; /* Restore cursor pointer */
         position: relative; /* For positioning the menu indicator */
     }
 
