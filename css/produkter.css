@@ -105,12 +105,12 @@ label {
 .produkt .pris {
     font-size: 18px;
     font-weight: bold;
-    color: #C574F1;
+    color: #af31f3;
     margin-bottom: 15px;
 }
 
 .köp-knapp {
-    background-color: #C574F1;
+    background-color: #af31f3;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -120,7 +120,7 @@ label {
 }
 
 .köp-knapp:hover {
-    background-color: #a155d1;
+    background-color: #af31f3;
 }
 
 /* Responsiv design */
