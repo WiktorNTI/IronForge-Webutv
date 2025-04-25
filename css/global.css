@@ -14,30 +14,93 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Navigation */
+/* Header & Navigation - Mobile First */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
     background-color: #121212;
-    gap: 20px;
+    gap: 15px;
 }
 
 .logotyp img {
     height: 40px;
     width: auto;
     transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
 }
 
 .logotyp img:hover {
     transform: scale(1.05);
 }
 
+/* Add a menu indicator to the logo for mobile */
+.logotyp::after {
+    content: "☰"; /* Hamburger icon */
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #C574F1;
+    transition: transform 0.3s ease;
+}
+
+/* Change the menu indicator to a close icon when active */
+.logotyp.active::after {
+    content: "✕"; /* Close icon */
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Hide the navigation by default on mobile */
+nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-bottom: 2px solid #333;
+    z-index: 99;
+}
+
+/* Show the navigation when active */
+nav.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Navigation list styles */
 nav ul {
-    display: flex;
     list-style: none;
-    gap: 25px;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+nav li {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+nav li:last-child {
+    border-bottom: none;
+}
+
+/* Special style for "Hem" button */
+nav ul li.hem-knapp {
+    background-color: #C574F1;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul li.hem-knapp a {
+    color: white;
+    font-weight: bold;
 }
 
 nav a {
@@ -52,17 +115,9 @@ nav a.active {
     color: #C574F1;
 }
 
+/* Hide search bar on mobile */
 .sok {
-    display: flex;
-    gap: 5px;
-}
-
-.sok input {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background: #2a2a2a;
-    color: white;
+    display: none;
 }
 
 /* Buttons & Interactive Elements */
@@ -82,8 +137,8 @@ nav a.active {
 }
 
 .cta-knapp {
-    font-size: 18px;
-    padding: 12px 24px;
+    font-size: 16px;
+    padding: 10px 20px;
     border-radius: 8px;
 }
 
@@ -121,87 +176,73 @@ a:focus {
     outline-offset: 2px;
 }
 
-/* Make the logo clickable on mobile */
-@media (max-width: 768px) {
-    .logotyp {
-        cursor: pointer; /* Restore cursor pointer */
-        position: relative; /* For positioning the menu indicator */
-    }
+/* Animation for menu */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    /* Add a menu indicator (e.g., ☰) to the logo */
+/* Tablet and desktop styles */
+@media (min-width: 769px) {
+    /* Reset mobile specific styles */
     .logotyp::after {
-        content: "☰"; /* Hamburger icon */
-        position: absolute;
-        right: -25px; /* Adjust position as needed */
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 20px;
-        color: #C574F1; /* Match your theme color */
-        transition: transform 0.3s ease;
+        content: none;
     }
-
-    /* Change the menu indicator to a close icon when active */
-    .logotyp.active::after {
-        content: "✕"; /* Close icon */
-        transform: translateY(-50%) rotate(90deg);
+    
+    .logotyp {
+        cursor: default;
     }
-
-    /* Hide the navigation by default on mobile */
+    
+    /* Show navigation for larger screens */
     nav {
-        display: none;
-        position: absolute;
-        top: 70px; /* Adjust based on header height */
-        left: 0;
-        width: 100%;
-        background-color: #1a1a1a;
-        padding: 15px;
-        border-bottom: 2px solid #333;
-        z-index: 99;
-    }
-
-    /* Show the navigation when active */
-    nav.active {
         display: block;
-        animation: fadeIn 0.3s ease;
-    }
-
-    /* Navigation link styles */
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        padding-top: 10px; /* Ger lite utrymme ovanför */
-    }
-
-    nav li {
-        border-bottom: 1px solid #333;
-        padding: 10px 0;
-    }
-
-    nav li:last-child {
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
         border-bottom: none;
     }
-
-    /* Lägg till en speciell stil för "Hem"-knappen */
+    
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        padding-top: 0;
+    }
+    
+    nav li {
+        border-bottom: none;
+        padding: 0;
+    }
+    
+    /* Reset special styles for home button */
     nav ul li.hem-knapp {
-        background-color: #C574F1;
-        border-radius: 5px;
-        text-align: center;
-        margin-bottom: 10px;
+        background-color: transparent;
+        margin-bottom: 0;
     }
-
+    
     nav ul li.hem-knapp a {
-        color: white;
-        font-weight: bold;
+        color: #fff;
+        font-weight: normal;
     }
-
-    /* Hide search bar on mobile if needed */
+    
+    /* Show search bar on larger screens */
     .sok {
-        display: none;
+        display: flex;
+        gap: 5px;
     }
-
-    /* Animation for menu */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+    
+    .sok input {
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        background: #2a2a2a;
+        color: white;
+    }
+    
+    /* Adjust sizes for desktop */
+    .cta-knapp {
+        font-size: 18px;
+        padding: 12px 24px;
     }
 }

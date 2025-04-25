@@ -1,20 +1,20 @@
+/* Support - Mobile First */
 .support-content {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .faq-section {
     background: #1e1e1e;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
 }
 
 .faq-item {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .faq-question {
@@ -24,33 +24,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
     background-color: #2a2a2a;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 .faq-answer {
-    padding: 10px;
+    padding: 8px;
     background-color: #333;
     border-radius: 0 0 5px 5px;
     margin-top: 5px;
+    font-size: 13px;
 }
 
 .contact-form {
     background: #1e1e1e;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
 }
 
 .contact-form form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     background: #2a2a2a;
@@ -58,14 +60,14 @@
 }
 
 .contact-form textarea {
-    height: 150px;
+    height: 120px;
     resize: vertical;
 }
 
 .contact-form button {
     background-color: #C574F1;
     color: white;
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -76,28 +78,69 @@
     background-color: #a155d1;
 }
 
-@media (max-width: 768px) {
+/* Tablet styles */
+@media (min-width: 481px) {
     .support-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 15px;
+        padding: 20px;
+        gap: 25px;
     }
-}
-
-/* Add for smaller devices */
-@media (max-width: 480px) {
+    
+    .faq-section,
+    .contact-form {
+        padding: 18px;
+    }
+    
     .faq-question {
-        font-size: 14px;
-        padding: 8px;
+        font-size: 15px;
+        padding: 10px;
     }
     
     .faq-answer {
-        font-size: 13px;
+        font-size: 14px;
+        padding: 10px;
     }
     
     .contact-form input,
     .contact-form textarea,
     .contact-form button {
+        padding: 11px;
+    }
+    
+    .contact-form textarea {
+        height: 140px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .support-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        padding: 20px;
+    }
+    
+    .faq-section,
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .faq-question {
+        font-size: 16px;
         padding: 10px;
+    }
+    
+    .faq-answer {
+        font-size: 15px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        padding: 12px;
+    }
+    
+    .contact-form textarea {
+        height: 150px;
     }
 }

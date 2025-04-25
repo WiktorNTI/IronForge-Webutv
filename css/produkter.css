@@ -1,9 +1,9 @@
-/* produkter.css */
+/* produkter.css - Mobile First */
 
 /* Hero Section */
 .page-hero {
     text-align: center;
-    padding: 100px 20px;
+    padding: 50px 15px;
     background-image: url('../media/hero-image.webp'); 
     background-size: cover;
     background-position: center;
@@ -19,32 +19,40 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Mörklägger bilden för bättre kontrast */
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.page-hero h1,
+.page-hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
 .page-hero p {
     position: relative;
     z-index: 1;
+    font-size: 16px;
 }
 
 /* Filter Section */
 .filter-section {
     background-color: #121212;
-    padding: 20px;
-    margin-bottom: 40px;
+    padding: 15px;
+    margin-bottom: 30px;
 }
 
 .filter-container {
     display: flex;
+    flex-direction: column;
     gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
+    align-items: center;
     margin: 0 auto;
 }
 
 .filter-dropdown {
+    width: 100%;
+    max-width: 300px;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
@@ -67,17 +75,16 @@ label {
 
 /* Kategori Grid */
 .kategori-grid {
-    padding: 0 20px;
-    max-width: 1200px;
+    padding: 0 15px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
 .produkt {
     background: #1e1e1e;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -90,7 +97,7 @@ label {
 
 .produkt img {
     max-width: 100%;
-    height: 200px;
+    height: 180px;
     width: auto;
     object-fit: cover;
     border-radius: 5px;
@@ -98,12 +105,12 @@ label {
 }
 
 .produkt h3 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 .produkt .pris {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #af31f3;
     margin-bottom: 15px;
@@ -120,10 +127,83 @@ label {
 }
 
 .köp-knapp:hover {
-    background-color: #af31f3;
+    background-color: #9e21e1;
 }
 
-/* Responsiv design */
+/* Tablet styles */
+@media (min-width: 481px) {
+    .page-hero {
+        padding: 70px 20px;
+    }
+    
+    .page-hero h1 {
+        font-size: 32px;
+    }
+    
+    .filter-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filter-dropdown {
+        width: auto;
+    }
+    
+    .kategori-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .produkt {
+        padding: 18px;
+    }
+    
+    .produkt img {
+        height: 190px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .page-hero {
+        padding: 100px 20px;
+    }
+    
+    .filter-section {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .filter-container {
+        max-width: 1200px;
+    }
+    
+    .kategori-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+    
+    .produkt {
+        padding: 20px;
+    }
+    
+    .produkt h3 {
+        font-size: 20px;
+    }
+    
+    .produkt .pris {
+        font-size: 18px;
+    }
+    
+    .produkt img {
+        height: 200px;
+    }
+}
+
+/* Larger desktop styles */
 @media (min-width: 1200px) {
     .kategori-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -133,46 +213,5 @@ label {
 @media (min-width: 1600px) {
     .kategori-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .kategori-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .produkt img {
-        height: 150px;
-    }
-
-    .filter-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .page-hero h1 {
-        font-size: 28px;
-    }
-
-    .page-hero p {
-        font-size: 16px;
-    }
-
-    .produkt {
-        padding: 15px;
-    }
-
-    .produkt h3 {
-        font-size: 18px;
-    }
-
-    .produkt .pris {
-        font-size: 16px;
-    }
-
-    .kategori-grid {
-        grid-template-columns: 1fr;
     }
 }

@@ -1,21 +1,20 @@
-
+/* Tjänster - Mobile First */
 .tjanster-container {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .tjanst-kort {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
 .tjanst {
     background-color: #1e1e1e;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -25,41 +24,41 @@
 }
 
 .tjanst-ikon {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 36px;
+    margin-bottom: 15px;
     color: #C574F1;
 }
 
 .tjanst h3 {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .tjanst p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .service-packages {
     background-color: #121212;
-    padding: 40px 0;
-    margin: 40px 0;
+    padding: 30px 0;
+    margin: 30px 0;
 }
 
 .service-packages h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .package-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 15px;
 }
 
 .package {
     background-color: #1e1e1e;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -80,20 +79,20 @@
 }
 
 .price {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 15px 0;
     color: #C574F1;
 }
 
 .price span {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
 }
 
 .features {
     list-style: none;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .features li {
@@ -105,32 +104,96 @@
     border-bottom: none;
 }
 
-@media (max-width: 768px) {
-    .tjanst-kort,
-    .package-container {
-        grid-template-columns: 1fr;
+/* Tablet styles */
+@media (min-width: 481px) {
+    .tjanst-kort {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-bottom: 40px;
     }
-}
-
-
-@media (max-width: 480px) {
+    
     .tjanst {
-        padding: 20px;
+        padding: 25px;
     }
     
     .tjanst-ikon {
-        font-size: 36px;
-    }
-    
-    .package {
-        padding: 20px;
-    }
-    
-    .price {
-        font-size: 28px;
+        font-size: 42px;
     }
     
     .service-packages {
-        padding: 30px 0;
+        padding: 35px 0;
+        margin: 35px 0;
+    }
+    
+    .package-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0 20px;
+    }
+    
+    .package {
+        padding: 25px;
+    }
+    
+    .price {
+        font-size: 32px;
+    }
+    
+    .price span {
+        font-size: 15px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .tjanster-container {
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+    
+    .tjanst-kort {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    
+    .tjanst {
+        padding: 30px;
+    }
+    
+    .tjanst-ikon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    
+    .tjanst h3 {
+        margin-bottom: 15px;
+    }
+    
+    .service-packages {
+        padding: 40px 0;
+        margin: 40px 0;
+    }
+    
+    .package-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .package {
+        padding: 30px;
+    }
+    
+    .price {
+        font-size: 36px;
+        margin: 20px 0;
+    }
+    
+    .price span {
+        font-size: 16px;
+    }
+    
+    .features {
+        margin-bottom: 25px;
     }
 }
